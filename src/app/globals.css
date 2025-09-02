@@ -1,0 +1,96 @@
+@import "tailwindcss";
+
+:root {
+  /* Core palette (change once here to theme the whole app) */
+  --background: #ffffff;
+  --foreground: #0a0a0a;
+  --muted: #f5f6f8;
+  --card: #ffffff;
+  --border: #e5e7eb;
+  --ring: #93c5fd;
+
+  /* Brand colors */
+  --primary: #2563eb;
+  /* blue-600 */
+  --primary-foreground: #ffffff;
+  --secondary: #f59e0b;
+  /* amber-500 */
+  --secondary-foreground: #111827;
+  --accent: #10b981;
+  /* emerald-500 */
+  --accent-foreground: #062e27;
+
+  /* Semantic */
+  --success: #22c55e;
+  --warning: #f97316;
+  --danger: #ef4444;
+
+  /* Radius scale */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0b1020;
+    --foreground: #f3f4f6;
+    --muted: #0f172a;
+    --card: #0e1428;
+    --border: #1f2937;
+    --ring: #60a5fa;
+    --primary: #3b82f6;
+    /* blue-500 */
+    --primary-foreground: #061426;
+    --secondary: #fbbf24;
+    --secondary-foreground: #0b0f1a;
+    --accent: #34d399;
+    --accent-foreground: #07261f;
+  }
+}
+
+@theme {
+  /* Bind CSS variables to Tailwind tokens */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-card: var(--card);
+  --color-border: var(--border);
+  --color-ring: var(--ring);
+
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --color-danger: var(--danger);
+
+  --radius-sm: var(--radius-sm);
+  --radius-md: var(--radius-md);
+  --radius-lg: var(--radius-lg);
+
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+/* Base element smoothing and defaults */
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-geist-sans), system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
+}
+
+/* Reusable utility for focus styles across the app */
+.focus-ring {
+  outline: none;
+  box-shadow: 0 0 0 3px color-mix(in oklab, var(--ring) 45%, transparent);
+}
